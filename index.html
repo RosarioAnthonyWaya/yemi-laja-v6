@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yemi Laja — Performing Artist · Transformational Coach · Creative Director</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- INNER CIRCLE STICKY BAR -->
+<div id="ic-bar">
+  <span>✦ Don't Miss: <strong>Worship in Chaos</strong> — July 25th 2026 · Get Tickets now</span>
+  <a href="/events/worship-in-chaos/">Get tickets here →</a>
+  <button id="ic-bar-close" onclick="document.getElementById('ic-bar').style.display='none'">✕</button>
+</div>
+
+<!-- INNER CIRCLE POPUP -->
+<div id="ic-popup">
+  <div id="ic-popup-inner">
+    <button id="ic-popup-close" onclick="closePopup()">✕</button>
+    <p class="ic-eyebrow">Signature Event · 2026</p>
+    <h2 class="ic-title">Worship in Chaos</h2>
+    <p class="ic-subtitle">Live worship Session · London, UK</p>
+    <p class="ic-body">Worship in Chaos is more than a concert. It is a live worship experience that creates space for stillness, encounter, and an atmosphere that cuts through distraction and meets people exactly where they are.
+
+This is not just an event. It is a movement. And everyone is welcome.</p>
+    <div class="ic-ctas">
+       <button class="ic-cta-ghost" onclick="closePopup()">Explore the Site First</button>
+      <a href="/events/worship-in-chaos/" class="ic-cta-primary">Register for the event</a> 
+    </div>
+  </div>
+</div>
+
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMobNav()">✕</button>
+  <a href="/" onclick="closeMobNav()">Home</a>
+  <a href="/about/" onclick="closeMobNav()">About</a>
+  <a href="/music/" onclick="closeMobNav()">Music & Media</a>
+  <a href="/services/" onclick="closeMobNav()">Services</a>
+  <a href="/events/" onclick="closeMobNav()">Events</a>
+  <a href="/contact/" onclick="closeMobNav()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo">Yemi <em>Laja</em></a>
+  <ul class="nav-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/music/">Music & Media</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <a href="/contact/#booking" class="nav-book">Book Yemi</a>
+  <div class="nav-ham" onclick="openMobNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="../photos/yemi-12.png" alt="Yemi Laja">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">London, UK · Est. 2010</p>
+    <h1 class="hero-name">Yemi<em>Laja</em></h1>
+    <p class="hero-roles">Performing Artist <span>·</span> Transformational Coach <span>·</span> Creative Director</p>
+    <div class="hero-ctas">
+      <a href="/contact/#booking" class="cta-primary">Book a Performance</a>
+      <a href="/events/" class="cta-ghost">Explore Events</a>
+      <a href="/music/" class="cta-ghost">Watch & Listen</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">Scroll to explore</div>
+</section>
+
+<!-- PATHS -->
+<section id="paths">
+  <div class="paths-header reveal">
+    <p class="paths-label">How can Yemi help you?</p>
+    <h2 class="paths-heading">Find Your <em>Path</em></h2>
+  </div>
+  <div class="paths-grid">
+    <a href="/contact/#booking" class="path-card reveal reveal-delay-1">
+      <img src="../photos/yemi-08.png" alt="Book Yemi">
+      <div class="path-card-overlay"></div>
+      <div class="path-card-content">
+        <div class="path-num">01</div>
+        <div class="path-label">Event Organisers</div>
+        <div class="path-title">Book Yemi for Your <em>Event</em></div>
+        <div class="path-desc">Live worship performances, spoken word, and stage appearances that move audiences.</div>
+        <div class="path-arrow">Book a Performance</div>
+      </div>
+    </a>
+    <a href="/services/coaching/#book" class="path-card reveal reveal-delay-2">
+      <img src="../photos/yemi-07.png" alt="Coaching Programs">
+      <div class="path-card-overlay"></div>
+      <div class="path-card-content">
+        <div class="path-num">02</div>
+        <div class="path-label">Coaching</div>
+        <div class="path-title">Grow into your <em>Full Potential</em></div>
+        <div class="path-desc">Coaching, talent development, and the Global Endorsement Programme.</div>
+        <div class="path-arrow">Join a Program</div>
+      </div>
+    </a>
+    <a href="/services/" class="path-card reveal reveal-delay-3">
+      <img src="../photos/yemi-14.jpg" alt="Global Talent Endorsement">
+      <div class="path-card-overlay"></div>
+      <div class="path-card-content">
+        <div class="path-num">03</div>
+        <div class="path-label">Global Talent</div>
+        <div class="path-title">UK Global Talent <em>Consultation</em></div>
+        <div class="path-desc">Expert support for your UK Global Talent Endorsement application in the Arts & Culture category. 100% success rate.</div>
+        <div class="path-arrow">Book a Consultation</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WORLD -->
+<section id="world">
+  <div class="world-top">
+    <div class="reveal">
+      <p class="world-label">The Craft</p>
+      <h2 class="world-heading">Her World in <em>Motion</em></h2>
+    </div>
+    <p class="world-intro reveal reveal-delay-1">
+      Music. Spoken word. Film. Stage. Every form of expression Yemi steps into carries the same signature — presence, precision, and a spirit-led creative intelligence that is impossible to manufacture.
+    </p>
+  </div>
+  <div class="world-grid">
+    <div class="world-item reveal" onclick="openVideo('https://www.youtube.com/embed/-UiA9qCjYio')">
+      <img src="https://i.ibb.co/1fWbtmcc/Everything-I-ve-Needed-Youtube-2.jpg" alt="Yemi Laja">
+      <div class="world-item-overlay"></div>
+      <div class="world-item-label">Music · Everything I've Needed</div>
+    </div>
+    <div class="world-item reveal reveal-delay-1">
+      <img src="https://i.ibb.co/5WvttNHb/King-In-You-Youtube-1.jpg" alt="Yemi Laja">
+      <div class="world-item-overlay"></div>
+      <div class="world-item-label">Music · The King In You</div>
+    </div>
+    <div class="world-item reveal reveal-delay-2">
+      <img src="https://i.ibb.co/NnCTw2LT/dailylightgospelmedia-1602090245-2414830458339005484-34161840231.jpg" alt="Yemi Laja">
+      <div class="world-item-overlay"></div>
+      <div class="world-item-label">The Good news</div>
+    </div>
+    <div class="world-item reveal reveal-delay-1" onclick="openVideo('https://www.youtube.com/embed/Fa4kD-FzWSU')">
+      <img src="https://i.ibb.co/whKcXjfw/Ireti-nbe.jpg" alt="Yemi Laja">
+      <div class="world-item-overlay"></div>
+      <div class="world-item-label">Music · Ireti nbe</div>
+    </div>
+    <div class="world-item reveal reveal-delay-2">
+      <img src="https://i.ibb.co/VYSfgTc9/My-Resurrection-Story-Squre.jpg" alt="Yemi Laja">
+      <div class="world-item-overlay"></div>
+      <div class="world-item-label">Spoken word· Resurrection Story</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about-strip">
+  <div class="about-img-wrap reveal">
+    <img src="../photos/yemi-09.png" alt="Yemi Laja">
+    <div class="about-img-border"></div>
+  </div>
+  <div class="reveal reveal-delay-1">
+    <p class="about-label">About Yemi</p>
+    <h2 class="about-heading">Artist First. <em>Everything</em><br>Around Her Is Organised.</h2>
+    <blockquote class="about-quote">"I don't just create — I build spaces where faith meets culture, and talent finds its voice."</blockquote>
+    <p class="about-body">
+      Yemi Laja is a London-based worship artist, songwriter, theatre actor, vocal coach, and the founder of Mastercraft Global Limited. A multipotentialite with over 10 years of experience, she has performed on high-profile stages across Nigeria, the United Kingdom, and Ireland — and is a valued member of the renowned Crescent Theatre in Birmingham.
+    </p>
+    <div class="about-stats">
+      <div><div class="stat-num">13+</div><div class="stat-lbl">Years of Ministry</div></div>
+      <div><div class="stat-num">290+</div><div class="stat-lbl">Completed Projects</div></div>
+      <div><div class="stat-num">3</div><div class="stat-lbl">Continents Reached</div></div>
+    </div>
+    <a href="/about/" class="cta-primary">Read Her Story</a>
+  </div>
+</section>
+
+<!-- AUTHORITY -->
+<section id="authority">
+  <p class="auth-label reveal">Trusted & Experienced With</p>
+  <div class="brands-row reveal reveal-delay-1">
+    <span class="brand-item">Celebration church West London</span>
+    <span class="brand-item">The Covenant Nation</span>
+    <span class="brand-item">The Ark, Canary Wharf</span>
+    <span class="brand-item">Outhbox UK</span>
+    <span class="brand-item">Preye's Baskets</span>
+    <span class="brand-item">Boltzmenn</span>
+    <span class="brand-item">Mastercraft Global</span>
+  </div>
+</section>
+
+<!-- MASTERCRAFT -->
+<section id="mastercraft">
+  <div class="mc-bg-text">Craft</div>
+  <div class="mc-header reveal">
+    <p class="mc-label">Powered by Mastercraft</p>
+    <h2 class="mc-heading">Built Beyond <em>the Stage</em></h2>
+    <p class="mc-sub">Beyond the music and the stage, Yemi leads a suite of programmes and services designed to develop talent, create compelling work, and produce lasting impact.</p>
+  </div>
+  <div class="mc-grid">
+    <a href="/services/coaching/#book" class="mc-card reveal reveal-delay-1">
+      <div class="mc-num">01</div>
+      <div class="mc-card-label">Coaching</div>
+      <div class="mc-card-title">Coaching <em>Sessions</em></div>
+      <div class="mc-card-body">One-on-one and group coaching that helps creatives clarify their vision, build their craft, and step into their calling with confidence and strategy.</div>
+      <div class="mc-link">Apply for Coaching</div>
+    </a>
+    <a href="/services/" class="mc-card reveal reveal-delay-2">
+      <div class="mc-num">02</div>
+      <div class="mc-card-label">Global Programme</div>
+      <div class="mc-card-title">Global Talent <em>Consultation</em></div>
+      <div class="mc-card-body">The Global Talent Endorsement Programme identifies, endorses, and connects emerging artists and creatives with global platforms and opportunities.</div>
+      <div class="mc-link">Submit Application</div>
+    </a>
+    <a href="/services/directing/" class="mc-card reveal reveal-delay-3">
+      <div class="mc-num">03</div>
+      <div class="mc-card-label">For Brands</div>
+      <div class="mc-card-title">Producing and Directing <em>Films/Movies</em></div>
+      <div class="mc-card-body">Creative branding, corporate productions, and strategic collaborations. Excellence in visual storytelling and design for organisations and institutions.</div>
+      <div class="mc-link">Request this Service</div>
+    </a>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section id="event">
+  <div class="event-bg">
+    <img src="../photos/yemi-05.png" alt="Worship in Chaos">
+  </div>
+  <div class="event-overlay"></div>
+  <div class="event-grid-lines"></div>
+  <div class="event-content">
+    <div class="reveal">
+      <span class="event-badge">Signature Event · 2026</span>
+      <h2 class="event-title">Worship<em>in Chaos</em></h2>
+      <p class="event-sub">A Night of Worship · Faith · Community</p>
+      <div class="event-meta">
+        <div><div class="meta-label">Date</div><div class="meta-val">July 2026</div></div>
+        <div><div class="meta-label">Format</div><div class="meta-val">Live Experience</div></div>
+        <div><div class="meta-label">Tickets</div><div class="meta-val">Available Now</div></div>
+      </div>
+      <a href="/events/worship-in-chaos/" class="cta-primary">Get Your Ticket</a>
+    </div>
+    <div class="event-right reveal reveal-delay-2">
+      <div class="event-img-wrap">
+        <img src="../photos/yemi-06.png" alt="Worship in Chaos">
+        <div class="event-img-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testi-header">
+    <p class="testi-label reveal">Voices &amp; Impact</p>
+    <h2 class="testi-heading reveal reveal-delay-1">What They <em>Say</em></h2>
+  </div>
+  <div class="testi-grid">
+
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">Yemi demonstrated exceptional versatility and commitment, taking on a demanding immersive monologue role alongside an already intensive workload. Her ability to fully embody a complex character and captivate an intimate audience — including distinguished guests such as Her Late Majesty's Lord Lieutenant of Durham and university principals — speaks to her strength as a performer. As a natural storyteller, she brings depth, adaptability, and excellence to every role she undertakes.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div>
+          <div class="testi-name">Mike Elliston</div>
+          <div class="testi-role">Full Member, Writers' Guild of Great Britain</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">The Worship Medley was so beautiful. With her incredible voice, Yemi sings full of heart. It was deeply touching and powerful and something that stays with you. I didn't expect to feel so moved but it's a testament to her talent and the heart she puts into her music.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">K</div>
+        <div>
+          <div class="testi-name">Kamila</div>
+          <div class="testi-role">Data Analytics VP</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">This is so calming and refreshing to watch. Such a beautiful reminder of what Christ has done for us on the cross. This is great work and I love it.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Adeleresimi Philips</div>
+          <div class="testi-role">Senior Associate (Lawyer) — on The Good News</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">After my coaching session with Yemi Laja, I truly understood the power of the mind and meditation. Through meditation and learning to open myself up mentally, I was able to tap into my imagination in a deeper way. This has helped me to stir up the power of my imagination and be in control, even on days I feel pressured.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Ayobami Olomo</div>
+          <div class="testi-role">Train Systems Engineer — Mastercraft Coaching</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">During the Mastercraft programme with Yemi Laja, I gained a transformative perspective on meditation and stillness that continues to influence my life as I birth the reality of who I am in Christ. Yemi's insights and achievements are highly commendable.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Peter Olagunju</div>
+          <div class="testi-role">Project Delivery Facilities — Mastercraft Coaching</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">After the session at Mastercraft Coaching, I was able to learn how to match my spirit with my soul and also see myself the way God sees me. I so much enjoyed the meditation session and I was able to pay attention to all God has been saying to me prior to the session.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">T</div>
+        <div>
+          <div class="testi-name">Tobi Kay</div>
+          <div class="testi-role">Communications Lead — Mastercraft Coaching</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal reveal-delay-1" style="grid-column:span 1;">
+      <div class="testi-mark">"</div>
+      <p class="testi-text">Working with Yemi as one of the Props and Production Assistant managers was an absolute pleasure from start to finish. Her dedication, professionalism, and consistent hard work were evident throughout the production. She brought warmth, reliability, and a collaborative spirit that made the entire process enjoyable for everyone involved. An outstanding team player and a star throughout the production — we couldn't have done it without her.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">Cast &amp; Crew</div>
+          <div class="testi-role">The Importance of Being Earnest · Crescent Theatre Birmingham 2025</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Yemi <em>Laja</em></div>
+      <p class="footer-tagline">Performing Artist · Transformational Coach · Creative Director<br>Founder of Mastercraft Global Limited<br>Based in London, UK</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/yemi_laja/" class="footer-social">IG</a>
+        <a href="https://www.facebook.com/omolaja.olayemi.5/" class="footer-social">FB</a>
+        <a href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" class="footer-social">YT</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About Yemi</a></li>
+        <li><a href="/music/">Music & Media</a></li>
+        <li><a href="/programs/">Programs</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Programs</p>
+      <ul class="footer-links">
+        <li><a href="/programs/#coaching">Coaching</a></li>
+        <li><a href="/programs/#endorsement">Talent Endorsement</a></li><li><a href="/global-talent-webinar/">Free Webinar — July 2025</a></li>
+        <li><a href="/programs/#design">Mastercraft Designs</a></li>
+        <li><a href="/events/">Worship in Chaos</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Book & Connect</p>
+      <ul class="footer-links">
+        <li><a href="/contact/#booking">Book a Performance</a></li>
+        <li><a href="/contact/#inquiry">General Inquiry</a></li>
+        <li><a href="/programs/#endorsement-form">Apply for Endorsement</a></li>
+        <li><a href="/contact/#design">Design Request</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2025 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p>
+    <p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p>
+  </div>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div class="modal" id="videoModal">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="closeVideo()">✕ Close</button>
+    <iframe class="modal-video" id="videoFrame" src="" allowfullscreen allow="autoplay"></iframe>
+  </div>
+</div>
+
+<script>
+// Inner Circle popup
+function closePopup(){
+  document.getElementById('ic-popup').style.display='none';
+  document.getElementById('ic-popup').style.opacity='0';
+  setTimeout(()=>document.getElementById('ic-popup').style.display='none',300);
+}
+// Show popup after 1.5s
+setTimeout(()=>{
+  const p=document.getElementById('ic-popup');
+  if(p) p.style.display='flex';
+},1500);
+
+// Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.left=mx+'px'; cursor.style.top=my+'px'; });
+(function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); })();
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  const barH = document.getElementById('ic-bar')?.offsetHeight || 0;
+  nav.style.top = document.getElementById('ic-bar')?.style.display === 'none' ? '0' : barH+'px';
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Mobile nav
+function openMobNav(){ document.getElementById('mobNav').classList.add('open'); }
+function closeMobNav(){ document.getElementById('mobNav').classList.remove('open'); }
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Video modal
+function openVideo(src){ document.getElementById('videoFrame').src=src; document.getElementById('videoModal').classList.add('open'); }
+function closeVideo(){ document.getElementById('videoFrame').src=''; document.getElementById('videoModal').classList.remove('open'); }
+document.getElementById('videoModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeVideo(); });
+</script>
+</body>
+</html>

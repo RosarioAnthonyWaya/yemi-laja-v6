@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events & Programmes — Yemi Laja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+#events-intro { padding:5rem 6rem 3rem; background:var(--white); }
+.events-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3px; background:var(--stone); margin-top:4rem; }
+.event-card {
+  position:relative; overflow:hidden;
+  text-decoration:none; color:inherit;
+  background:var(--char); display:block;
+  aspect-ratio:4/3;
+}
+.event-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.5; filter:sepia(10%); transition:transform 0.6s, opacity 0.4s; }
+.event-card:hover img { transform:scale(1.05); opacity:0.65; }
+.event-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(14,14,26,0.97) 0%, rgba(14,14,26,0.3) 70%); }
+.event-card-content { position:absolute; bottom:0; left:0; right:0; padding:2.5rem; z-index:2; }
+.event-card-badge { display:inline-block; font-size:0.58rem; letter-spacing:0.2026em; text-transform:uppercase; color:var(--char); background:var(--gold); padding:0.3rem 0.9rem; margin-bottom:1rem; }
+.event-card-title { font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.5rem); font-weight:300; color:var(--cream); line-height:1.1; margin-bottom:0.5rem; }
+.event-card-title em { font-style:italic; color:var(--gold); }
+.event-card-meta { font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(20260,248,245,0.5); margin-bottom:1.2rem; }
+.event-card-link { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:0.5rem; transition:gap 0.3s; }
+.event-card:hover .event-card-link { gap:1rem; }
+.event-card-link::after { content:'→'; }
+.event-card.featured { grid-column:span 2; aspect-ratio:16/7; }
+#coming-soon { padding:7rem 6rem; background:var(--ivory); }
+.cs-list { margin-top:3rem; }
+.cs-item { display:grid; grid-template-columns:120px 1fr auto; gap:2rem; align-items:center; padding:2rem 0; border-bottom:1px solid var(--border); }
+.cs-item:first-child { border-top:1px solid var(--border); }
+.cs-date { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:300; color:var(--gold); opacity:0.6; font-style:italic; }
+.cs-name { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; color:var(--char); margin-bottom:0.3rem; }
+.cs-loc { font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--mist); }
+.cs-status { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.4rem 1rem; border:1px solid var(--border); color:var(--mist); white-space:nowrap; }
+.cs-status.open { border-color:var(--gold); color:var(--gold); }
+
+@media(max-width:1024px){ #events-intro{padding:4rem 3rem 2rem;} .events-grid{grid-template-columns:1fr;} .event-card.featured{grid-column:span 1;aspect-ratio:4/3;} #coming-soon{padding:5rem 3rem;} .cs-item{grid-template-columns:80px 1fr;gap:1rem;} .cs-status{display:none;} }
+@media(max-width:767px){ #events-intro{padding:3rem 1.5rem 2rem;} #coming-soon{padding:4rem 1.5rem;} .cs-item{display:flex;flex-direction:column;gap:0.4rem;} .cs-date{font-size:1.1rem;opacity:1;} }
+</style>
+</head>
+<body>
+<div class="mob-nav" id="mobNav"><button class="mob-close" onclick="closeMobNav()">✕</button><a href="/">Home</a><a href="/about/">About</a><a href="/music/">Music & Media</a><a href="/services/">Services</a><a href="/events/">Events</a><a href="/contact/">Contact</a></div>
+<nav id="nav" class="scrolled">
+  <a href="/" class="nav-logo" style="color:var(--char)">Yemi <em>Laja</em></a>
+  <ul class="nav-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/services/">Services</a></li><li><a href="/events/" style="color:var(--gold)">Events</a></li><li><a href="/contact/">Contact</a></li></ul>
+  <a href="/contact/#booking" class="nav-book">Book Yemi</a>
+  <div class="nav-ham" onclick="openMobNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="../photos/yemi-03.png" alt="Events"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-eyebrow">What's On</p>
+    <h1 class="page-title">Events &amp; <em>Programmes</em></h1>
+    <p class="page-subtitle">Live worship, Coaching, webinars, and performances.</p>
+  </div>
+</section>
+
+<section id="events-intro">
+  <div class="reveal">
+    <p class="section-label">Current & Upcoming</p>
+    <h2 class="section-heading" style="color:var(--char);">Everything <em>Happening Now</em></h2>
+    <p style="font-size:1rem;line-height:1.95;color:var(--mist);max-width:600px;margin-top:1.2rem;">From live worship experiences to theatre productions, coaching programmes and free webinars — find your next step below.</p>
+  </div>
+  <div class="events-grid">
+
+    <!-- FEATURED: Worship in Chaos -->
+    <a href="/events/worship-in-chaos/" class="event-card featured reveal">
+      <img src="../photos/yemi-05.png" alt="Worship in Chaos">
+      <div class="event-card-overlay"></div>
+      <div class="event-card-content">
+        <span class="event-card-badge">Signature Event · 2026</span>
+        <div class="event-card-title">Worship in <em>Chaos</em></div>
+        <div class="event-card-meta">July 25th 2026 · London, UK · Live Worship Experience</div>
+        <div class="event-card-link">Get Tickets</div>
+      </div>
+    </a>
+
+    <!-- Global Talent Webinar -->
+    <a href="/events/global-talent-webinar/" class="event-card reveal rd1">
+      <img src="../photos/yemi-15.jpg" alt="Global Talent Webinar">
+      <div class="event-card-overlay"></div>
+      <div class="event-card-content">
+        <span class="event-card-badge">Free Webinar · May 16th 2026</span>
+        <div class="event-card-title">Global Talent <em>Endorsement</em></div>
+        <div class="event-card-meta">May 16th 2026 · Online · Free to Attend</div>
+        <div class="event-card-link">Register Free</div>
+      </div>
+    </a>
+
+    <!-- Inner Circle -->
+    <a href="/events/inner-circle/" class="event-card reveal rd2">
+      <img src="../photos/yemi-12.png" alt="Inner Circle">
+      <div class="event-card-overlay"></div>
+      <div class="event-card-content">
+        <span class="event-card-badge">Ladies Programme · Now Enrolling</span>
+        <div class="event-card-title">Inner <em>Circle</em></div>
+        <div class="event-card-meta">3-Week Coaching · Online & In-Person</div>
+        <div class="event-card-link">Register Now</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section id="coming-soon">
+  <div class="reveal">
+    <p class="section-label">On the Horizon</p>
+    <h2 class="section-heading" style="color:var(--char);">Coming <em>Soon</em></h2>
+  </div>
+  <div class="cs-list">
+    <div class="cs-item reveal rd1">
+      <div class="cs-date">Jul 25th 2026</div>
+      <div><div class="cs-name">Worship in Chaos — London</div><div class="cs-loc">London, United Kingdom</div></div>
+      <div class="cs-status open">Tickets Available</div>
+    </div>
+    <div class="cs-item reveal rd2">
+      <div class="cs-date">May 16th 2026</div>
+      <div><div class="cs-name">Global Talent Endorsement Webinar</div><div class="cs-loc">Online — Free</div></div>
+      <div class="cs-status open">Register Free</div>
+    </div>
+    <div class="cs-item reveal rd3">
+      <div class="cs-date">Q4 '2026</div>
+      <div><div class="cs-name">Mastercraft Coaching Conference</div><div class="cs-loc">London, United Kingdom</div></div>
+      <div class="cs-status">Coming Soon</div>
+    </div>
+    <div class="cs-item reveal">
+      <div class="cs-date">2026</div>
+      <div><div class="cs-name">International Tour</div><div class="cs-loc">UK · Europe · West Africa</div></div>
+      <div class="cs-status">TBC</div>
+    </div>
+  </div>
+</section>
+
+<div id="cta-band" class="reveal"><div class="cta-band-text"><p class="cta-band-eyebrow">Want Yemi at your event?</p><h2 class="cta-band-heading">Book her for your <em>next event.</em></h2></div><a href="/contact/#booking" class="cta-dark">Book a Performance</a></div>
+
+<footer><div class="footer-top"><div><div class="footer-brand-name">Yemi <em>Laja</em></div><p class="footer-tagline">Performing Artist · Transformational Coach · Creative Director<br>Founder of Mastercraft Global Limited<br>Based in London, UK</p><div class="footer-socials"><a href="https://www.instagram.com/yemi_laja/" class="footer-social">IG</a><a href="https://www.facebook.com/omolaja.olayemi.5/" class="footer-social">FB</a><a href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" class="footer-social">YT</a></div></div><div><p class="footer-col-title">Navigate</p><ul class="footer-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/services/">Services</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact</a></li></ul></div><div><p class="footer-col-title">Events</p><ul class="footer-links"><li><a href="/events/worship-in-chaos/">Worship in Chaos</a></li><li><a href="/events/global-talent-webinar/">Global Talent Webinar</a></li><li><a href="/events/inner-circle/">Inner Circle</a></li></ul></div><div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="/contact/#booking">Book a Performance</a></li><li><a href="mailto:yemilaja@mastercraftglobal.com">yemilaja@mastercraftglobal.com</a></li></ul></div></div><div class="footer-bottom"><p class="footer-legal">© 2026 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p><p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p></div></footer>
+<script>function openMobNav(){document.getElementById("mobNav").classList.add("open");} function closeMobNav(){document.getElementById("mobNav").classList.remove("open");} const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");}),{threshold:0.12}); document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));</script>
+</body></html>

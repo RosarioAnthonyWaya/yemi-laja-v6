@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Directing & Producing — Yemi Laja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<style>
+#intro { padding:7rem 6rem; background:var(--white); display:grid; grid-template-columns:1.2fr 1fr; gap:7rem; align-items:center; }
+#intro img { width:100%; filter:sepia(8%) contrast(1.05); }
+.body-p { font-size:0.95rem; line-height:2; color:var(--mist); margin-bottom:1.2rem; }
+#offerings { padding:7rem 6rem; background:var(--ivory); }
+.offerings-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--stone); margin-top:3.5rem; }
+.offering { background:var(--white); padding:3rem 2.5rem; }
+.offering-label { font-size:0.62rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+.offering-title { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:300; color:var(--char); margin-bottom:0.8rem; }
+.offering-title em { font-style:italic; color:var(--gold); }
+.offering-body { font-size:0.85rem; line-height:1.85; color:var(--mist); }
+#highlights { padding:7rem 6rem; background:var(--white); }
+.hl-list { list-style:none; margin-top:3rem; }
+.hl-item { display:flex; gap:1.5rem; align-items:flex-start; padding:1.4rem 0; border-bottom:1px solid var(--border); }
+.hl-item:first-child { border-top:1px solid var(--border); }
+.hl-dot { width:8px; height:8px; background:var(--gold); border-radius:50%; flex-shrink:0; margin-top:0.4rem; }
+.hl-text { font-size:0.92rem; color:var(--char); line-height:1.7; }
+.hl-tag { font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--mist); margin-left:auto; white-space:nowrap; padding-left:1rem; }
+#enquire { padding:7rem 6rem; background:var(--linen); display:grid; grid-template-columns:1fr 1.3fr; gap:6rem; }
+.enq-info-item { margin-bottom:2rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
+.enq-info-item:last-child { border-bottom:none; }
+.enq-label { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+.enq-val { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--char); font-style:italic; }
+.enq-sub { font-size:0.82rem; color:var(--mist); margin-top:0.2rem; line-height:1.7; }
+.form-group { margin-bottom:1.4rem; }
+.form-label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--mist); display:block; margin-bottom:0.5rem; }
+.form-input,.form-select,.form-textarea { width:100%; background:var(--white); border:1px solid var(--stone); color:var(--char); font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:300; padding:0.9rem 1rem; outline:none; transition:border-color 0.3s; }
+.form-input:focus,.form-select:focus,.form-textarea:focus { border-color:var(--gold); }
+.form-textarea { min-height:130px; resize:vertical; }
+.form-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8278' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; appearance:none; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media(max-width:1024px){ #intro,#enquire{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;} #offerings,#highlights{padding:5rem 3rem;} .offerings-grid{grid-template-columns:1fr;} }
+@media(max-width:767px){ #intro,#offerings,#highlights,#enquire{padding-left:1.5rem!important;padding-right:1.5rem!important;} .form-row{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="mob-nav" id="mobNav"><button class="mob-close" onclick="closeMobNav()">✕</button><a href="/">Home</a><a href="/about/">About</a><a href="/music/">Music & Media</a><a href="/services/">Services</a><a href="/events/">Events</a><a href="/contact/">Contact</a></div>
+<nav id="nav" class="scrolled">
+  <a href="/" class="nav-logo" style="color:var(--char)">Yemi <em>Laja</em></a>
+  <ul class="nav-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/services/" style="color:var(--gold)">Services</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact</a></li></ul>
+  <a href="#enquire" class="nav-book">Start a Project</a>
+  <div class="nav-ham" onclick="openMobNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="../../photos/yemi-14.jpg" alt="Creative Directing"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-eyebrow">Services · Directing</p>
+    <h1 class="page-title">Creative Directing <em>&amp; Producing</em></h1>
+    <p class="page-subtitle">From concept to execution — bringing creative visions to life across music, film, theatre, and events.</p>
+  </div>
+</section>
+
+<section id="intro">
+  <div class="reveal rd1">
+    <p class="section-label">About This Service</p>
+    <h2 class="section-heading" style="color:var(--char);margin-bottom:1.5rem;">Vision Into <em>Reality.</em></h2>
+    <p class="body-p">Yemi Laja is a theatre actor, theatre producer, playwright, and creative entrepreneur with over 10 years of experience directing and producing creative work across the UK and Nigeria. She brings the same standard of excellence she holds herself to every project she leads — regardless of scale.</p>
+    <p class="body-p">Whether you need a music video directed, a theatre production produced, a live event staged, or a brand narrative shaped through film and media — Yemi brings creative intelligence, purposeful vision, and hands-on execution to every project.</p>
+    <p class="body-p">She is a valued member of the Crescent Theatre in Birmingham, one of the UK's longest-standing amateur theatres — and her work spans original plays, large-scale church productions, and commercial creative direction.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+      <a href="#enquire" class="cta-primary">Start a Project</a>
+      <a href="/contact/#inquiry" class="cta-ghost" style="color:var(--char);border-color:rgba(30,26,22,0.3);">Ask a Question</a>
+    </div>
+  </div>
+  <div class="reveal"><img src="../../photos/yemi-05.png" alt="Yemi Laja"></div>
+</section>
+
+<section id="offerings">
+  <div class="reveal">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-heading" style="color:var(--char);">Services <em>Available</em></h2>
+  </div>
+  <div class="offerings-grid">
+    <div class="offering reveal rd1">
+      <div class="offering-label">Music</div>
+      <div class="offering-title">Music Video <em>Production</em></div>
+      <p class="offering-body">Concept development, direction, and production of music videos — from intimate acoustic sessions to full cinematic productions. Purpose-driven visuals that serve the song.</p>
+    </div>
+    <div class="offering reveal rd2">
+      <div class="offering-label">Theatre</div>
+      <div class="offering-title">Theatre <em>Productions</em></div>
+      <p class="offering-body">Full theatre production from script to stage — including original playwriting, casting support, staging, and direction. Experience across churches, community venues, and professional theatres.</p>
+    </div>
+    <div class="offering reveal rd1">
+      <div class="offering-label">Film</div>
+      <div class="offering-title">Film &amp; Screen <em>Production</em></div>
+      <p class="offering-body">Short film and screen production — creative direction, production assistance, and acting. Film credits include Broken and Unfailing Love 1.</p>
+    </div>
+    <div class="offering reveal rd2">
+      <div class="offering-label">Events & Brands</div>
+      <div class="offering-title">Creative <em>Direction</em></div>
+      <p class="offering-body">Creative direction for live events, brand storytelling, conferences, and media content. Translating your identity and vision into a cohesive, powerful creative experience.</p>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="reveal">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-heading" style="color:var(--char);">What She's <em>Produced</em></h2>
+  </div>
+  <ul class="hl-list">
+    <li class="hl-item reveal rd1"><div class="hl-dot"></div><div class="hl-text"><strong>"The Importance of Being Earnest"</strong> — Production Assistant & Props Manager, Crescent Theatre, Birmingham (2025)</div><div class="hl-tag">Theatre</div></li>
+    <li class="hl-item reveal rd2"><div class="hl-dot"></div><div class="hl-text"><strong>"Saviour"</strong> — Self-written, directed, and produced; performed at RCCG House of Grace, Durham (Dec 2022)</div><div class="hl-tag">Theatre</div></li>
+    <li class="hl-item reveal rd3"><div class="hl-dot"></div><div class="hl-text"><strong>"The King is Coming"</strong> — Lead Actor/Narrator; Ozone Cinema, Surrey Quays, London (Dec 2023)</div><div class="hl-tag">Theatre</div></li>
+    <li class="hl-item reveal"><div class="hl-dot"></div><div class="hl-text"><strong>"Parable of the Sower"</strong> — Lead Actor/Narrator; Phoenix Academy, Celebration Church London (May 2024)</div><div class="hl-tag">Theatre</div></li>
+    <li class="hl-item reveal rd1"><div class="hl-dot"></div><div class="hl-text"><strong>Worship in Chaos</strong> — Creative direction and performance for flagship annual worship event</div><div class="hl-tag">Live Event</div></li>
+    <li class="hl-item reveal rd2" style="border-bottom:none;"><div class="hl-dot"></div><div class="hl-text"><strong>Broken · Unfailing Love 1</strong> — Film appearances and production involvement</div><div class="hl-tag">Film</div></li>
+  </ul>
+</section>
+
+<section id="enquire">
+  <div class="reveal">
+    <p class="section-label">Start a Project</p>
+    <h2 class="section-heading" style="color:var(--char);margin-bottom:2rem;">Let's <em>Create Together</em></h2>
+    <div class="enq-info-item"><div class="enq-label">Response Time</div><div class="enq-val">48–72 hours</div><div class="enq-sub">All enquiries are read personally by Yemi or her team.</div></div>
+    <div class="enq-info-item"><div class="enq-label">Available For</div><div class="enq-val">Music · Theatre · Film · Live Events · Brand Direction</div></div>
+    <div class="enq-info-item"><div class="enq-label">Based In</div><div class="enq-val">London, UK</div><div class="enq-sub">Available for projects across the UK and internationally.</div></div>
+    <div class="enq-info-item"><div class="enq-label">Contact</div><div class="enq-val"><a href="mailto:yemilaja@mastercraftglobal.com" style="color:var(--gold);text-decoration:none;">yemilaja@mastercraftglobal.com</a></div></div>
+  </div>
+  <div class="reveal rd1">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:300;color:var(--char);margin-bottom:2rem;">Project <em>Enquiry</em></h3>
+    <div class="form-row"><div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" placeholder="Full name"></div><div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="your@email.com"></div></div>
+    <div class="form-group"><label class="form-label">Organisation / Project Name</label><input type="text" class="form-input" placeholder="Company, church, or project name"></div>
+    <div class="form-row"><div class="form-group"><label class="form-label">Type of Production</label><select class="form-select"><option value="">Select type</option><option>Music Video</option><option>Theatre Production</option><option>Film / Screen</option><option>Live Event Direction</option><option>Brand Creative Direction</option><option>Other</option></select></div><div class="form-group"><label class="form-label">Approximate Budget</label><select class="form-select"><option value="">Select range</option><option>Under £1,000</option><option>£1,000 – £5,000</option><option>£5,000 – £15,000</option><option>£15,000+</option><option>To be discussed</option></select></div></div>
+    <div class="form-group"><label class="form-label">Project Brief</label><textarea class="form-textarea" placeholder="Tell us about your project — vision, timeline, any specific requirements..."></textarea></div>
+    <button onclick="this.textContent='Enquiry Sent ✓';this.disabled=true;this.style.background='var(--gold-dim)';" class="cta-primary" style="border:none;cursor:pointer;width:100%;text-align:center;">Send Project Enquiry</button>
+  </div>
+</section>
+
+<div id="cta-band" class="reveal"><div class="cta-band-text"><p class="cta-band-eyebrow">Explore more</p><h2 class="cta-band-heading">See all <em>services.</em></h2></div><a href="/services/" class="cta-dark">Back to Services</a></div>
+
+<footer><div class="footer-top"><div><div class="footer-brand-name">Yemi <em>Laja</em></div><p class="footer-tagline">Performing Artist · Transformational Coach · Creative Director<br>Founder of Mastercraft Global Limited<br>Based in London, UK</p><div class="footer-socials"><a href="https://www.instagram.com/yemi_laja/" class="footer-social">IG</a><a href="https://www.facebook.com/omolaja.olayemi.5/" class="footer-social">FB</a><a href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" class="footer-social">YT</a></div></div><div><p class="footer-col-title">Navigate</p><ul class="footer-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/services/">Services</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact</a></li></ul></div><div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services/coaching/">Mastercraft Coaching</a></li><li><a href="/services/directing/">Creative Directing</a></li><li><a href="https://mastercraftglobal.com" target="_blank">Global Talent Endorsement ↗</a></li></ul></div><div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="/contact/#booking">Book a Performance</a></li><li><a href="mailto:yemilaja@mastercraftglobal.com">yemilaja@mastercraftglobal.com</a></li></ul></div></div><div class="footer-bottom"><p class="footer-legal">© 2025 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p><p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p></div></footer>
+<script>function openMobNav(){document.getElementById("mobNav").classList.add("open");} function closeMobNav(){document.getElementById("mobNav").classList.remove("open");} const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");}),{threshold:0.12}); document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));</script>
+</body></html>

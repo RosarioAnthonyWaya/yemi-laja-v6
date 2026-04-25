@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inner Circle — Yemi Laja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+#ic-hero {
+  position:relative; min-height:100vh;
+  display:flex; align-items:flex-end; overflow:hidden;
+  background:var(--char);
+}
+.ic-hero-bg { position:absolute; inset:0; }
+.ic-hero-bg img { width:100%; height:100%; object-fit:cover; opacity:0.4; filter:sepia(10%); }
+.ic-hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(30,26,22,0.98) 0%, rgba(30,26,22,0.5) 60%, rgba(30,26,22,0.1) 100%);
+}
+.ic-hero-content { position:relative; z-index:2; padding:0 6rem 6rem; max-width:800px; }
+.ic-label { font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem; }
+.ic-label::before { content:''; width:30px; height:1px; background:var(--gold); }
+.ic-hero-title { font-family:'Playfair Display',serif; font-size:clamp(4rem,10vw,9rem); font-weight:300; font-style:italic; color:var(--cream); line-height:0.9; margin-bottom:1rem; }
+.ic-hero-sub { font-size:0.82rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(237,229,216,0.5); margin-bottom:2.5rem; }
+.ic-meta { display:flex; gap:3rem; flex-wrap:wrap; padding:2rem 0; border-top:1px solid rgba(201,168,76,0.2); border-bottom:1px solid rgba(201,168,76,0.2); margin-bottom:2.5rem; }
+.ic-meta-item {}
+.ic-meta-label { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(237,229,216,0.4); margin-bottom:0.4rem; }
+.ic-meta-val { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold-dim); font-style:italic; }
+
+#ic-about { padding:7rem 6rem; background:var(--white); display:grid; grid-template-columns:1fr 1.2fr; gap:7rem; align-items:start; }
+.ic-about-img img { width:100%; filter:sepia(8%); }
+.ic-quote { font-family:'DM Serif Display',serif; font-style:italic; font-size:1.35rem; line-height:1.65; color:var(--gold-dim); border-left:2px solid var(--gold); padding-left:1.5rem; margin:2rem 0; }
+.ic-body { font-size:0.95rem; line-height:1.95; color:var(--mist); margin-bottom:1.2rem; }
+
+#ic-pillars { padding:7rem 6rem; background:var(--parchment); }
+.pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--sand); margin-top:3rem; }
+.pillar { background:var(--white); padding:3rem 2.5rem; }
+.pillar-num { font-family:'Playfair Display',serif; font-size:4rem; font-weight:300; color:rgba(201,168,76,0.15); line-height:1; margin-bottom:1rem; }
+.pillar-title { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:400; color:var(--char); margin-bottom:0.8rem; }
+.pillar-title em { font-style:italic; color:var(--gold); }
+.pillar-body { font-size:0.88rem; line-height:1.85; color:var(--mist); }
+
+#ic-register { padding:7rem 6rem; background:var(--char); }
+.ic-reg-wrap { display:grid; grid-template-columns:1fr 1.2fr; gap:3px; background:rgba(201,168,76,0.1); margin-top:3rem; }
+.ic-reg-info { background:rgba(201,168,76,0.05); padding:3.5rem; }
+.ic-reg-form { background:var(--char-soft); padding:3.5rem; }
+.reg-info-item { margin-bottom:2.5rem; }
+.reg-info-label { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem; }
+.reg-info-val { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--cream); font-style:italic; line-height:1.5; }
+.reg-info-sub { font-size:0.83rem; color:rgba(237,229,216,0.5); margin-top:0.3rem; line-height:1.6; }
+.form-group { margin-bottom:1.4rem; }
+.form-label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(237,229,216,0.5); display:block; margin-bottom:0.5rem; }
+.form-input,.form-select,.form-textarea { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); color:var(--cream); font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:300; padding:0.9rem 1rem; outline:none; transition:border-color 0.3s; }
+.form-input:focus,.form-select:focus,.form-textarea:focus { border-color:var(--gold); }
+.form-textarea { min-height:100px; resize:vertical; }
+.form-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; appearance:none; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+@media(max-width:1024px){
+  .ic-hero-content{padding:0 3rem 5rem;}
+  #ic-about{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;}
+  #ic-pillars{padding:5rem 3rem;}
+  .pillars-grid{grid-template-columns:1fr;}
+  #ic-register{padding:5rem 3rem;}
+  .ic-reg-wrap{grid-template-columns:1fr;}
+  .ic-reg-info,.ic-reg-form{padding:2.5rem;}
+}
+@media(max-width:767px){
+  .ic-hero-content{padding:0 1.5rem 4rem!important;}
+  #ic-about,#ic-pillars,#ic-register{padding-left:1.5rem!important;padding-right:1.5rem!important;}
+  .ic-meta{flex-wrap:wrap;gap:1.2rem;}
+  .form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMobNav()">✕</button>
+  <a href="/">Home</a><a href="/about/">About</a>
+  <a href="/music/">Music & Media</a><a href="/programs/">Programs</a>
+  <a href="/events/">Events</a><a href="/contact/">Contact</a>
+</div>
+<nav id="nav" class="scrolled">
+  <a href="/" class="nav-logo" style="color:var(--char)">Yemi <em>Laja</em></a>
+  <ul class="nav-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/music/">Music & Media</a></li>
+    <li><a href="/programs/">Programs</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <a href="#ic-register" class="nav-book">Register Now</a>
+  <div class="nav-ham" onclick="openMobNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="ic-hero">
+  <div class="ic-hero-bg">
+    <img src="../../photos/yemi-12.png" alt="Inner Circle"
+         >
+  </div>
+  <div class="ic-hero-overlay"></div>
+  <div class="ic-hero-content">
+    <p class="ic-label">Ladies Only · Now Enrolling</p>
+    <h1 class="ic-hero-title">Inner Circle</h1>
+    <p class="ic-hero-sub">3-Month Mentorship Programme · Led by Yemi Laja</p>
+    <div class="ic-meta">
+      <div class="ic-meta-item"><div class="ic-meta-label">Duration</div><div class="ic-meta-val">3 Weeks</div></div>
+      <div class="ic-meta-item"><div class="ic-meta-label">Who It's For</div><div class="ic-meta-val">Ladies Only</div></div>
+      <div class="ic-meta-item"><div class="ic-meta-label">Format</div><div class="ic-meta-val">Online Only</div></div>
+      <div class="ic-meta-item"><div class="ic-meta-label">Status</div><div class="ic-meta-val">Now Enrolling</div></div>
+    </div>
+    <a href="#ic-register" class="cta-primary">Register Now</a>
+  </div>
+</section>
+
+<section id="ic-about">
+  <div class="ic-about-img reveal">
+    <img src="../../photos/yemi-12.png" alt="Yemi Laja"
+         >
+  </div>
+  <div class="reveal reveal-delay-1">
+    <p class="section-label">About the Programme</p>
+    <h2 class="section-heading" style="color:var(--char);margin-bottom:1.5rem;">A Space to Become <em>Whole.</em></h2>
+    <blockquote class="ic-quote">"This is not just a programme. It is a space of deep encounter, honest conversation, and lasting transformation."</blockquote>
+    <p class="ic-body">Inner Circle is a 3-month coaching experience for ladies who are ready to go deeper — with God, with themselves, and with their purpose. Led personally by Yemi Laja, this is an intimate and transformative journey designed to help you:</p>
+    <p class="ic-body">Become more like Jesus. Build genuine intimacy with God. Become whole and fully empowered to fulfil your purpose on earth.</p>
+    <p class="ic-body">Whether you're at a crossroads, feeling stuck, or simply hungry for more, Inner Circle meets you exactly where you are.</p>
+    <a href="#ic-register" class="cta-primary" style="margin-top:1rem;display:inline-block;">Secure Your Spot</a>
+  </div>
+</section>
+
+<section id="ic-pillars">
+  <div class="reveal">
+    <p class="section-label">What We'll Cover</p>
+    <h2 class="section-heading" style="color:var(--char);">Three <em>Pillars</em></h2>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar reveal reveal-delay-1">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">Becoming More <em>Like Jesus</em></div>
+      <p class="pillar-body">A deep dive into identity rooted in Christ — shifting from performance to presence, from striving to surrender. Practical sessions on character, virtue, and spiritual formation.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-2">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">Building <em>Intimacy with God</em></div>
+      <p class="pillar-body">Practices and encounters that deepen your prayer life, strengthen your sensitivity to the Holy Spirit, and anchor you in a genuine personal relationship with God.</p>
+    </div>
+    <div class="pillar reveal reveal-delay-3">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">Fulfilling Your <em>Purpose</em></div>
+      <p class="pillar-body">Discovering who God made you to be — and building the confidence, clarity, and courage to walk fully into it. Practical tools for purpose, wholeness, and empowerment.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ic-register">
+  <div class="reveal" style="max-width:700px;margin-bottom:3rem;">
+    <p class="mc-label">Ladies · Limited Spaces</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:var(--cream);line-height:1.1;">Register for <em style="font-style:italic;color:var(--gold)">Inner Circle</em></h2>
+    <p style="font-size:0.95rem;line-height:1.9;color:rgba(237,229,246,0.5);margin-top:1rem;">Spaces are limited. Complete the form below and Yemi's team will be in touch within 48 hours to confirm your place.</p>
+  </div>
+  <div class="ic-reg-wrap reveal reveal-delay-1">
+    <div class="ic-reg-info">
+      <div class="reg-info-item">
+        <div class="reg-info-label">Duration</div>
+        <div class="reg-info-val">3 Weeks</div>
+        <div class="reg-info-sub">Weekly sessions with reading, reflection, and community access.</div>
+      </div>
+      <div class="reg-info-item">
+        <div class="reg-info-label">Who Can Join</div>
+        <div class="reg-info-val">Ladies Only</div>
+        <div class="reg-info-sub">Open to all ladies regardless of background, faith stage, or location.</div>
+      </div>
+      <div class="reg-info-item">
+        <div class="reg-info-label">Format</div>
+        <div class="reg-info-val">Online Only</div>
+        <div class="reg-info-sub">Flexible access — attend virtually or in person where available.</div>
+      </div>
+      <div class="reg-info-item">
+        <div class="reg-info-label">Led By</div>
+        <div class="reg-info-val">Yemi Laja</div>
+        <div class="reg-info-sub">Worship artist, life coach, and founder of Mastercraft Global Limited.</div>
+      </div>
+      <div class="reg-info-item">
+        <div class="reg-info-label">Questions?</div>
+        <div class="reg-info-val"><a href="/contact/" style="color:var(--gold);text-decoration:none;">Contact the team →</a></div>
+      </div>
+    </div>
+    <div class="ic-reg-form">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Your first name"></div>
+        <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Your last name"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="your@email.com"></div>
+      <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-input" placeholder="+44 ..."></div>
+      <div class="form-group"><label class="form-label">Country</label><input type="text" class="form-input" placeholder="Country of residence"></div>
+      <div class="form-group">
+        <label class="form-label">How did you hear about Inner Circle?</label>
+        <select class="form-select">
+          <option value="">Select one</option>
+          <option>Instagram</option>
+          <option>YouTube</option>
+          <option>Facebook</option>
+          <option>From a friend</option>
+          <option>Yemi's website</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What do you hope to experience?</label>
+        <textarea class="form-textarea" placeholder="Share a little about where you are right now and what you're hoping this programme will do for you..."></textarea>
+      </div>
+      <button onclick="this.textContent='Registration Submitted ✓';this.disabled=true;this.style.background='var(--gold-dim)';" class="cta-primary" style="border:none;cursor:pointer;width:100%;text-align:center;justify-content:center;">Register for Inner Circle</button>
+    </div>
+  </div>
+</section>
+
+<div id="cta-band" class="reveal">
+  <div class="cta-band-text">
+    <p class="cta-band-eyebrow">Explore more from Yemi</p>
+    <h2 class="cta-band-heading">Music, coaching, events — <em>discover it all.</em></h2>
+  </div>
+  <a href="/" class="cta-dark">Back to Homepage</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Yemi <em>Laja</em></div>
+      <p class="footer-tagline">Performing Artist · Transformational Coach · Creative Director<br>Founder of Mastercraft Global Limited<br>Based in London, UK</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/yemi_laja/" class="footer-social">IG</a>
+        <a href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" class="footer-social">YT</a>
+        <a href="https://www.facebook.com/omolaja.olayemi.5/" class="footer-social">FB</a>
+        </div>
+    </div>
+    <div><p class="footer-col-title">Navigate</p><ul class="footer-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/programs/">Programs</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+    <div><p class="footer-col-title">Programs</p><ul class="footer-links"><li><a href="/programs/#coaching">Mastercraft Coaching</a></li><li><a href="/programs/#endorsement">Global Talent Endorsement</a></li><li><a href="/programs/#design">Mastercraft Designs</a></li><li><a href="/inner-circle/">Inner Circle</a></li></ul></div>
+    <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="/contact/#booking">Book a Performance</a></li><li><a href="/contact/#inquiry">General Inquiry</a></li><li><a href="/inner-circle/">Inner Circle Registration</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2025 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p>
+    <p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p>
+  </div>
+</footer>
+<script>
+function openMobNav(){document.getElementById("mobNav").classList.add("open");}
+function closeMobNav(){document.getElementById("mobNav").classList.remove("open");}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");}),{threshold:0.12});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+</body></html>
