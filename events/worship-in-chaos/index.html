@@ -40,6 +40,11 @@
 .ticket-perks li { font-size:0.88rem; color:var(--mist); padding:0.55rem 0; border-bottom:1px solid rgba(0,0,0,0.06); display:flex; gap:0.8rem; align-items:flex-start; }
 .ticket.featured .ticket-perks li { color:rgba(250,248,245,0.6); border-bottom-color:rgba(255,255,255,0.06); }
 .ticket-perks li::before { content:'✦'; color:var(--gold); font-size:0.45rem; margin-top:0.5rem; flex-shrink:0; }
+
+@media(min-width:1025px){
+  #event-hero { align-items:center; }
+  .eh-content { padding-top:9rem; padding-bottom:4rem; }
+}
 @media(max-width:1024px){ .eh-content{padding:0 3rem 5rem;} #about-event{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;} #tickets{padding:5rem 3rem;} .tickets-grid{grid-template-columns:1fr;} }
 @media(max-width:767px){ .eh-content{padding:0 1.5rem 4rem;} .eh-title{font-size:clamp(3.5rem,16vw,6rem);} .eh-meta{flex-wrap:wrap;gap:1.2rem;} #about-event,#tickets{padding-left:1.5rem!important;padding-right:1.5rem!important;} }
 </style>
