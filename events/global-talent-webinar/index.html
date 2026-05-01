@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="style.css">
 <style>
 #gt-hero {
   position:relative; min-height:100vh;
@@ -71,6 +71,10 @@
 .form-select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8278' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 1rem center; padding-right:2.5rem; appearance:none; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 
+@media(min-width:1025px){
+  #gt-hero { align-items:center; }
+  .gt-hero-content { padding-top:9rem; padding-bottom:4rem; }
+}
 @media(max-width:1024px){
   .gt-hero-content{padding:0 3rem 5rem;}
   #gt-about{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;}
