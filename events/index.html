@@ -38,6 +38,10 @@
 .cs-status { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.4rem 1rem; border:1px solid var(--border); color:var(--mist); white-space:nowrap; }
 .cs-status.open { border-color:var(--gold); color:var(--gold); }
 
+@media(min-width:1025px){
+  #event-hero { align-items:center; }
+  .eh-content { padding-top:9rem; padding-bottom:4rem; }
+}
 @media(max-width:1024px){ #events-intro{padding:4rem 3rem 2rem;} .events-grid{grid-template-columns:1fr;} .event-card.featured{grid-column:span 1;aspect-ratio:4/3;} #coming-soon{padding:5rem 3rem;} .cs-item{grid-template-columns:80px 1fr;gap:1rem;} .cs-status{display:none;} }
 @media(max-width:767px){ #events-intro{padding:3rem 1.5rem 2rem;} #coming-soon{padding:4rem 1.5rem;} .cs-item{display:flex;flex-direction:column;gap:0.4rem;} .cs-date{font-size:1.1rem;opacity:1;} }
 </style>
