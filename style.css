@@ -127,7 +127,7 @@ body:has(button:hover) .cursor-ring { width: 56px; height: 56px; opacity: 0.8; }
   background: var(--char-soft);
 }
 
-.hero-bg img { width:100%; height:100%; object-fit:cover; object-position:50% 20%; transform:scale(0.85); transform-origin:center top; }
+.hero-bg img { width:100%; height:100%; object-fit:cover; object-position:10% 25%; transform:scale(1); transform-origin:center top; }
 
 @keyframes heroZoom {
   from { transform: scale(1.05); }
