@@ -29,28 +29,44 @@ body {
   cursor: none;
 }
 
-/* ── CUSTOM CURSOR ── */
+/* CURSOR */
+*, *::before, *::after { cursor: none !important; }
+
 .cursor {
-  position: fixed; z-index: 9999;
-  width: 8px; height: 8px;
+  position: fixed;
+  width: 8px;
+  height: 8px;
   background: var(--gold);
   border-radius: 50%;
   pointer-events: none;
-  transition: transform 0.15s ease, opacity 0.15s;
+  z-index: 9999;
   transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, opacity 0.2s;
+  will-change: transform;
+  top: 0; left: 0;
 }
+
 .cursor-ring {
-  position: fixed; z-index: 9998;
-  width: 36px; height: 36px;
-  border: 1px solid var(--gold);
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--gold);
   border-radius: 50%;
   pointer-events: none;
-  transition: transform 0.4s ease, width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 9998;
   transform: translate(-50%, -50%);
-  opacity: 0.5;
+  transition: width 0.15s, height 0.15s, opacity 0.2s;
+  will-change: transform;
+  opacity: 0.6;
+  top: 0; left: 0;
 }
-body:has(a:hover) .cursor-ring,
-body:has(button:hover) .cursor-ring { width: 56px; height: 56px; opacity: 0.8; }
+
+/* Expand ring on hoverable elements */
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring { width: 48px; height: 48px; opacity: 1; }
+
+/* Hide when mouse leaves window */
+.cursor.hidden, .cursor-ring.hidden { opacity: 0; }
 
 /* ── NAV ── */
 #nav {
