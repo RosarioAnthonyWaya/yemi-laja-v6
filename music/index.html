@@ -237,4 +237,7 @@ function openVideo(src){document.getElementById("videoFrame").src=src;document.g
 function closeVideo(){document.getElementById("videoFrame").src="";document.getElementById("videoModal").classList.remove("open");}
 document.getElementById("videoModal").addEventListener("click",e=>{if(e.target===e.currentTarget)closeVideo();});
 </script>
+  <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+    <script src="../cursor.js"></script>
 </body></html>
