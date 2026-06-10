@@ -428,11 +428,62 @@ setTimeout(()=>{
 },1500);
 
 // Cursor
+// CURSOR — uses transform instead of left/top for GPU acceleration
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
-let mx=0, my=0, rx=0, ry=0;
-document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cursor.style.left=mx+'px'; cursor.style.top=my+'px'; });
-(function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); })();
+
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+let visible = false;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  // Dot follows instantly via transform (no layout thrashing)
+  cursor.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+
+  if (!visible) {
+    cursor.classList.remove('hidden');
+    ring.classList.remove('hidden');
+    visible = true;
+  }
+});
+
+// Ring follows with smooth lerp — also uses transform
+(function lerpRing() {
+  ringX += (mouseX - ringX) * 0.15;
+  ringY += (mouseY - ringY) * 0.15;
+  ring.style.transform = `translate(${ringX - 16}px, ${ringY - 16}px)`;
+  requestAnimationFrame(lerpRing);
+})();
+
+// Hide cursor when mouse leaves the window
+document.addEventListener('mouseleave', () => {
+  cursor.classList.add('hidden');
+  ring.classList.add('hidden');
+  visible = false;
+});
+
+document.addEventListener('mouseenter', () => {
+  cursor.classList.remove('hidden');
+  ring.classList.remove('hidden');
+  visible = true;
+});
+
+// Grow ring on hover
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.width = '48px';
+    ring.style.height = '48px';
+    ring.style.opacity = '1';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.width = '32px';
+    ring.style.height = '32px';
+    ring.style.opacity = '0.6';
+  });
+});
 
 // Nav scroll
 const nav = document.getElementById('nav');
