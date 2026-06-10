@@ -133,4 +133,7 @@
   function openMobNav(){document.getElementById("mobNav").classList.add("open");} function closeMobNav(){document.getElementById("mobNav").classList.remove("open");}
   const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");}),{threshold:0.12}); document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
   </script>
+    <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <script src="../../cursor.js"></script>
   </body></html>
