@@ -40,6 +40,10 @@
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 @media(max-width:1024px){ #intro,#enquire{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;} #offerings,#highlights{padding:5rem 3rem;} .offerings-grid{grid-template-columns:1fr;} }
 @media(max-width:767px){ #intro,#offerings,#highlights,#enquire{padding-left:1.5rem!important;padding-right:1.5rem!important;} .form-row{grid-template-columns:1fr;} }
+@media(min-width:1025px){
+  .page-hero { min-height:75vh; align-items:center; }
+  .page-hero-content { padding-top:9rem; padding-bottom:4rem; }
+}
 </style>
 </head>
 <body>
@@ -146,4 +150,7 @@
   <div><p class="footer-col-title">Navigate</p><ul class="footer-links"><li><a href="/about/">About</a></li><li><a href="/music/">Music & Media</a></li><li><a href="/services/">Services</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact</a></li></ul></div><div><p class="footer-col-title">Services</p><ul class="footer-links"><li><a href="/services/coaching/">Mastercraft Coaching</a></li><li><a href="/services/directing/">Creative Directing</a></li><li><a href="https://mastercraftglobal.com" target="_blank">Global Talent Endorsement ↗</a></li></ul></div>
   <div><p class="footer-col-title">Connect</p><ul class="footer-links"><li><a href="/contact/#booking">Book a Performance</a></li><li><a href="mailto:yemilaja@mastercraftglobal.com">yemilaja@mastercraftglobal.com</a></li></ul></div></div><div class="footer-bottom"><p class="footer-legal">© 2025 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p><p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p></div></footer>
 <script>function openMobNav(){document.getElementById("mobNav").classList.add("open");} function closeMobNav(){document.getElementById("mobNav").classList.remove("open");} const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add("visible");}),{threshold:0.12}); document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));</script>
+<div class="cursor hidden" id="cursor"></div>
+<div class="cursor-ring hidden" id="cursor-ring"></div>
+<script src="../../cursor.js"></script>
 </body></html>
