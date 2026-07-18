@@ -9,7 +9,9 @@
 <link rel="stylesheet" href="../style.css">
 <style>
 #services-intro { padding:6rem 6rem 4rem; background:var(--white); }
-.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--stone); margin-top:4rem; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--stone); margin-top:4rem; 
+               }
+  
 .svc-card {
   background:var(--white); padding:3.5rem 3rem;
   text-decoration:none; color:inherit;
@@ -53,6 +55,101 @@
 }
 @media(max-width:1024px){ #services-intro{padding:5rem 3rem 3rem;} .services-grid{grid-template-columns:1fr;} }
 @media(max-width:767px){ #services-intro{padding:4rem 1.5rem 2rem;} }
+
+/* ACADEMY SLIDE-UP POPUP
+   Comes from bottom. Doesn't block scrolling. Stays dismissible.
+   Same pattern as The Athletic UK. */
+#academy-popup {
+  position: fixed;
+  bottom: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 800;
+  width: 100%;
+  max-width: 680px;
+  background: var(--char);
+  border-top: 2px solid var(--gold);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.35);
+  transition: bottom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#academy-popup.visible {
+  bottom: 2rem;
+}
+.ap-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--black);
+}
+.ap-text { flex: 1; }
+.ap-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.ap-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.2rem;
+}
+.ap-sub {
+  font-size: 0.8rem;
+  color: rgba(244,244,240,0.5);
+}
+.ap-cta {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.ap-cta:hover { background: var(--gold-light); }
+.ap-close {
+  background: none;
+  border: none;
+  color: rgba(244,244,240,0.3);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  flex-shrink: 0;
+  transition: color 0.2s;
+  line-height: 1;
+}
+.ap-close:hover { color: var(--gold); }
+
+@media(max-width:767px){
+  #academy-popup {
+    max-width: calc(100% - 2rem);
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    bottom: -200px;
+  }
+  #academy-popup.visible { bottom: 1rem; }
+  .ap-icon { display: none; }
+  .ap-cta { width: 100%; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -119,6 +216,16 @@
       <div class="svc-link">Visit Mastercraft Global</div>
     </a>
 
+    <!-- ── 3. SERVICES CARD — paste inside .services-grid div ─────── -->
+<a href="/academy/" class="svc-card">
+  <img src="../photos/yemi-05.png" class="svc-img" alt="Mastercraft Music & Theatre Academy">
+  <div class="svc-num">04</div>
+  <div class="svc-label">New · Community</div>
+  <div class="svc-title">Music &amp; Theatre <em>Academy</em></div>
+  <p class="svc-body">A monthly membership community for creatives passionate about music and theatre — training, mentorship, productions, and UK Global Talent Visa support.</p>
+  <div class="svc-link">Explore the Academy</div>
+</a>
+
   </div>
 </section>
 
@@ -148,4 +255,38 @@ document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
   <script src="../cursor.js"></script>
+  <div id="academy-popup" role="complementary" aria-label="Academy announcement">
+  <div class="ap-icon">MC</div>
+  <div class="ap-text">
+    <div class="ap-label">New · Mastercraft</div>
+    <div class="ap-title">Music &amp; Theatre Academy is now open</div>
+    <div class="ap-sub">Monthly membership · All experience levels welcome</div>
+  </div>
+  <a href="/academy/" class="ap-cta">Learn More</a>
+  <button class="ap-close" onclick="dismissAcademyPopup()" aria-label="Dismiss">✕</button>
+</div>
+  <!-- ── 4. SCRIPT — paste before </body> after popup HTML ─────── -->
+<script>
+(function(){
+  // Only show popup if not dismissed in this session
+  if(sessionStorage.getItem('academyPopupDismissed')) return;
+
+  // Show after 4 seconds
+  setTimeout(function(){
+    const popup = document.getElementById('academy-popup');
+    if(popup) popup.classList.add('visible');
+  }, 4000);
+})();
+
+function dismissAcademyPopup(){
+  const popup = document.getElementById('academy-popup');
+  if(popup){
+    popup.style.bottom = '-200px';
+    setTimeout(function(){ popup.style.display = 'none'; }, 500);
+  }
+  sessionStorage.setItem('academyPopupDismissed', '1');
+}
+</script>
 </body></html>
+
+
