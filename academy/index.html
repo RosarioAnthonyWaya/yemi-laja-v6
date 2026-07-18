@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mastercraft Music & Theatre Academy — Yemi Laja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+#academy-intro { padding:7rem 6rem; background:var(--white); display:grid; grid-template-columns:1fr 1.1fr; gap:7rem; align-items:start; }
+.ai-body { font-size:0.95rem; line-height:2; color:var(--mist); margin-bottom:1.2rem; }
+.ai-quote { font-family:'DM Serif Display',serif; font-style:italic; font-size:1.25rem; line-height:1.65; color:var(--gold-dim); border-left:2px solid var(--gold); padding-left:1.5rem; margin:2rem 0; }
+.ai-blocks { display:flex; flex-direction:column; gap:1px; background:var(--stone); }
+.ai-block { background:var(--white); padding:1.8rem 2rem; }
+.ai-block-label { font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:0.4rem; }
+.ai-block-val { font-size:1rem; color:var(--char); font-weight:500; }
+
+#academy-benefits { padding:7rem 6rem; background:var(--ivory); }
+.ab-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--stone); margin-top:3.5rem; }
+.ab-card { background:var(--white); padding:3rem 2.5rem; }
+.ab-num { font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:300; color:rgba(201,168,76,0.15); line-height:1; margin-bottom:1rem; }
+.ab-title { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:400; color:var(--char); margin-bottom:0.7rem; }
+.ab-title em { font-style:italic; color:var(--gold); }
+.ab-body { font-size:0.88rem; line-height:1.85; color:var(--mist); }
+
+#academy-who { padding:7rem 6rem; background:var(--white); }
+.aw-list { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--stone); margin-top:3rem; }
+.aw-item { background:var(--white); padding:1.5rem 1.8rem; display:flex; align-items:center; gap:0.8rem; }
+.aw-dot { width:6px; height:6px; background:var(--gold); border-radius:50%; flex-shrink:0; }
+.aw-name { font-size:0.9rem; color:var(--char); }
+
+#academy-cta { padding:7rem 6rem; background:var(--char); display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
+.act-heading { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,5vw,4.5rem); font-weight:300; color:var(--cream); line-height:1; margin-bottom:1.5rem; }
+.act-heading em { font-style:italic; color:var(--gold); display:block; }
+.act-body { font-size:0.95rem; line-height:1.95; color:rgba(250,248,245,0.5); margin-bottom:2rem; }
+.act-right { padding:3rem; background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.2); }
+.act-right h3 { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:300; color:var(--cream); margin-bottom:1.5rem; }
+.act-plan { padding:1.2rem 0; border-bottom:1px solid rgba(255,255,255,0.06); display:flex; justify-content:space-between; align-items:center; }
+.act-plan:last-of-type { border-bottom:none; margin-bottom:1.5rem; }
+.act-plan-name { font-size:0.9rem; color:rgba(250,248,245,0.7); }
+.act-plan-price { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--gold); font-style:italic; }
+
+@media(max-width:1024px){
+  #academy-intro,#academy-cta{grid-template-columns:1fr;padding:5rem 3rem;gap:3rem;}
+  #academy-benefits,#academy-who{padding:5rem 3rem;}
+  .ab-grid{grid-template-columns:1fr;}
+  .aw-list{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:767px){
+  #academy-intro,#academy-benefits,#academy-who,#academy-cta{padding-left:1.5rem!important;padding-right:1.5rem!important;}
+  .aw-list{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMobNav()">✕</button>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/music/">Music &amp; Media</a>
+  <a href="/services/">Services</a>
+  <a href="/events/">Events</a>
+  <a href="/contact/">Contact</a>
+</div>
+
+<nav id="nav" class="scrolled">
+  <a href="/" class="nav-logo" style="color:var(--char)">Yemi <em>Laja</em></a>
+  <ul class="nav-links">
+    <li><a href="/about/">About</a></li>
+    <li><a href="/music/">Music &amp; Media</a></li>
+    <li><a href="/services/" style="color:var(--gold)">Services</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <a href="https://mastercraftglobal.com/academy/" target="_blank" class="nav-book">Join the Academy</a>
+  <div class="nav-ham" onclick="openMobNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg"><img src="../photos/yemi-14.jpg" alt="Mastercraft Music & Theatre Academy"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-eyebrow">Mastercraft Global Ltd</p>
+    <h1 class="page-title">Music &amp; Theatre <em>Academy</em></h1>
+    <p class="page-subtitle">A community for creatives passionate about music and theatre — nurturing talent, building skills, and making impact together.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="academy-intro">
+  <div class="reveal">
+    <p class="section-label">About the Academy</p>
+    <h2 class="section-heading" style="color:var(--char);margin-bottom:1.5rem;">Where Talent<br>Meets <em>Community.</em></h2>
+    <blockquote class="ai-quote">"A thriving community of creatives who desire to make impact through music and theatre."</blockquote>
+    <p class="ai-body">Mastercraft Music &amp; Theatre Academy is a community for individuals passionate about music and theatre. It exists to nurture talent, provide practical training, create opportunities for creative expression, and build a thriving community of creatives who desire to make impact through music and theatre.</p>
+    <p class="ai-body">The Academy meets at least once every month for training, networking, mentorship, rehearsals, and community engagement — creating a consistent, supportive rhythm of growth.</p>
+    <p class="ai-body">Membership is open to all experience levels. Whether you are an established professional or just beginning your creative journey, there is a place for you here.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+      <a href="https://mastercraftglobal.com/academy/" target="_blank" class="cta-primary">Join the Academy →</a>
+      <a href="https://mastercraftglobal.com/academy/#membership" target="_blank" class="cta-ghost" style="color:var(--char);border-color:rgba(30,26,22,0.3);">View Membership Plans</a>
+    </div>
+  </div>
+  <div class="reveal rd1">
+    <div class="ai-blocks">
+      <div class="ai-block">
+        <div class="ai-block-label">Meets</div>
+        <div class="ai-block-val">At least once per month</div>
+      </div>
+      <div class="ai-block">
+        <div class="ai-block-label">What Happens</div>
+        <div class="ai-block-val">Training · Networking · Mentorship · Rehearsals · Community</div>
+      </div>
+      <div class="ai-block">
+        <div class="ai-block-label">Open To</div>
+        <div class="ai-block-val">All experience levels — beginners welcome</div>
+      </div>
+      <div class="ai-block">
+        <div class="ai-block-label">Membership Model</div>
+        <div class="ai-block-val">Monthly subscription — three tiers</div>
+      </div>
+      <div class="ai-block">
+        <div class="ai-block-label">Run By</div>
+        <div class="ai-block-val">Mastercraft Global Ltd · Founded by Yemi Laja</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section id="academy-benefits">
+  <div class="reveal">
+    <p class="section-label">What You Get</p>
+    <h2 class="section-heading" style="color:var(--char);">Membership <em>Benefits</em></h2>
+  </div>
+  <div class="ab-grid">
+    <div class="ab-card reveal rd1">
+      <div class="ab-num">01</div>
+      <div class="ab-title">Global Talent <em>Visa Support</em></div>
+      <p class="ab-body">Support and guidance towards the UK Global Talent Visa application in the Music &amp; Theatre category — from a team with a 100% success rate.</p>
+    </div>
+    <div class="ab-card reveal rd2">
+      <div class="ab-num">02</div>
+      <div class="ab-title">Professional <em>Development</em></div>
+      <p class="ab-body">Opportunities to develop and utilise your music and theatre skills in a professional setting — with real productions and real audiences.</p>
+    </div>
+    <div class="ab-card reveal rd1">
+      <div class="ab-num">03</div>
+      <div class="ab-title">Training &amp; <em>Workshops</em></div>
+      <p class="ab-body">Regular training covering script writing, acting, music performance, theatre production, technical crew skills, and more.</p>
+    </div>
+    <div class="ab-card reveal rd2">
+      <div class="ab-num">04</div>
+      <div class="ab-title">Community &amp; <em>Mentorship</em></div>
+      <p class="ab-body">A thriving community offering collaboration, mentorship, accountability, networking, and ongoing support. You are not building alone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO CAN JOIN -->
+<section id="academy-who">
+  <div class="reveal">
+    <p class="section-label">Open to All</p>
+    <h2 class="section-heading" style="color:var(--char);">Who Can <em>Join?</em></h2>
+    <p style="font-size:1rem;color:var(--mist);margin-top:1rem;max-width:580px;line-height:1.85;">Membership is open to anyone interested in music and theatre production, regardless of experience level or area of specialisation.</p>
+  </div>
+  <div class="aw-list reveal rd1">
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Actors</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Singers</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Musicians</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Dancers</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Directors</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Producers</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Writers</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Technical Crew</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Production Crew</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Event Planners</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Graphic Designers</div></div>
+    <div class="aw-item"><div class="aw-dot"></div><div class="aw-name">Gaffers</div></div>
+    <div class="aw-item" style="grid-column:span 3;"><div class="aw-dot"></div><div class="aw-name">Anyone passionate about contributing to music and theatre productions</div></div>
+  </div>
+</section>
+
+<!-- CTA / REGISTER -->
+<section id="academy-cta">
+  <div class="reveal">
+    <h2 class="act-heading">Ready to <em>Join Us?</em></h2>
+    <p class="act-body">Registration and full membership details — including final pricing, meeting schedules, and onboarding — are managed through the Mastercraft Global website. Click below to register your interest.</p>
+    <a href="https://mastercraftglobal.com/academy/" target="_blank" class="btn-gold" style="display:inline-block;margin-right:1rem;">Join the Academy →</a>
+    <a href="https://mastercraftglobal.com/academy/#membership" target="_blank" class="btn-outline-white" style="display:inline-block;">View Membership Plans</a>
+  </div>
+  <div class="act-right reveal rd1">
+    <h3>Membership Plans</h3>
+    <div class="act-plan">
+      <span class="act-plan-name">Student</span>
+      <span class="act-plan-price">£15 / month</span>
+    </div>
+    <div class="act-plan">
+      <span class="act-plan-name">Employed Adult</span>
+      <span class="act-plan-price">£25 / month</span>
+    </div>
+    <div class="act-plan">
+      <span class="act-plan-name">Unemployed Adult</span>
+      <span class="act-plan-price">£10 / month</span>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(244,244,240,0.35);line-height:1.7;margin-bottom:1.5rem;font-style:italic;">Prices indicative — final pricing confirmed on registration.</p>
+    <a href="https://mastercraftglobal.com/academy/#register" target="_blank" class="btn-gold" style="display:inline-block;width:100%;text-align:center;">Register on Mastercraft →</a>
+  </div>
+</section>
+
+<div id="cta-band" class="reveal">
+  <div class="cta-band-text">
+    <p class="cta-band-eyebrow">Explore more</p>
+    <h2 class="cta-band-heading">Back to <em>Services.</em></h2>
+  </div>
+  <a href="/services/" class="cta-dark">All Services</a>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Yemi <em>Laja</em></div>
+      <p class="footer-tagline">Performing Artist · Transformational Coach · Creative Director<br>Founder of Mastercraft Global Limited<br>Based in London, UK</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/yemi_laja/" class="footer-social">IG</a>
+        <a href="https://www.facebook.com/omolaja.olayemi.5/" class="footer-social">FB</a>
+        <a href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" class="footer-social">YT</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/music/">Music &amp; Media</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Services</p>
+      <ul class="footer-links">
+        <li><a href="/services/coaching/">Mastercraft Coaching</a></li>
+        <li><a href="/services/directing/">Creative Directing</a></li>
+        <li><a href="/academy/">Music &amp; Theatre Academy</a></li>
+        <li><a href="https://mastercraftglobal.com" target="_blank">Mastercraft Global ↗</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Connect</p>
+      <ul class="footer-links">
+        <li><a href="/contact/#booking">Book a Performance</a></li>
+        <li><a href="mailto:yemilaja@mastercraftglobal.com">yemilaja@mastercraftglobal.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-legal">© 2026 Yemi Laja. All rights reserved. <strong>Powered by Mastercraft Global Limited.</strong></p>
+    <p class="footer-mc">Mastercraft Global Limited · Registered in the UK</p>
+  </div>
+</footer>
+
+<script>
+function openMobNav(){ document.getElementById("mobNav").classList.add("open"); }
+function closeMobNav(){ document.getElementById("mobNav").classList.remove("open"); }
+const obs = new IntersectionObserver(e => e.forEach(x => {
+  if(x.isIntersecting) x.target.classList.add("visible");
+}), { threshold: 0.12 });
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+</script>
+
+<div class="cursor hidden" id="cursor"></div>
+<div class="cursor-ring hidden" id="cursor-ring"></div>
+<script src="../cursor.js"></script>
+</body>
+</html>
